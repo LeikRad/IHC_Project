@@ -21,6 +21,14 @@ function App() {
           >
             Learn React
           </a>
+          <h1 className="text-3xl font-bold underline">
+            Hello world! (If this is underlined and bold tailwind is working)
+          </h1>
+          <button className="btn gap-2">
+            Inbox
+            (If this button is blue and has a +99 in purple daisyui is working)
+            <div className="badge badge-secondary">+99</div>
+          </button>
         </header>
       </div>
       <Routes>
