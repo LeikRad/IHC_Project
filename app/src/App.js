@@ -3,11 +3,14 @@ import './App.css';
 // import Navbar from './Components/Navbar/Navbar';
 // import Home from './Components/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
+      
+      <Navbar />
+      {/* <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -30,7 +33,7 @@ function App() {
             <div className="badge badge-secondary">+99</div>
           </button>
         </header>
-      </div>
+      </div> */}
       <Routes>
 
       </Routes>
