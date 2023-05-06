@@ -35,7 +35,7 @@ function App() {
         </header>
       </div> */}
       <Routes>
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/" element={<h1>hoemee</h1>} />
         <Route path="/profile" element={<h1>profile</h1>} />
       </Routes>
     </BrowserRouter>
