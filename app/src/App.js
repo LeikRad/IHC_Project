@@ -4,12 +4,14 @@ import './App.css';
 // import Home from './Components/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './Components/Navbar';
+import TeacherCard from './Components/TeacherCard'; 
 
 function App() {
   return (
     <BrowserRouter>
       
       <Navbar />
+      <TeacherCard />
       {/* <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
