@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import OurLogo from '../static/images/logo.png'
 import User from '../static/images/user.svg'
@@ -9,7 +10,7 @@ function Navbar() {
     return (
         <div className="navbar bg-primary">
         <div className="flex-1">
-            <span className="btn btn-ghost normal-case text-xl"><img src={OurLogo}  width="45px"/>SpeakEz</span>
+            <Link to={"/"} className="btn btn-ghost normal-case text-xl"><img src={OurLogo}  width="45px"/>SpeakEz</Link>
         </div>
         <div className="flex-none">
             {/* <div className="dropdown dropdown-end">
@@ -29,9 +30,9 @@ function Navbar() {
                 </div>
             </div>
             </div> */}
-            <div className="dropdown dropdown-end">
+            <Link to={"/"} className="dropdown dropdown-end">
                 <span className="btn btn-ghost normal-case text-xl"><img src={HomeButton}  width="40px"/></span>
-            </div>
+            </Link>
             <div className="dropdown dropdown-end">
                 <span className="btn btn-ghost normal-case text-xl"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1280px-Flag_of_Portugal.svg.png"  width="40px"/></span>
             </div>
@@ -43,10 +44,10 @@ function Navbar() {
             </label>
             <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                 <li>
-                <a className="justify-between">
+                <Link to={"/profile"} className="justify-between">
                     Profile
                     <span className="badge">New</span>
-                </a>
+                </Link>
                 </li>
                 <li><a>Settings</a></li>
                 <li><a>Logout</a></li>
