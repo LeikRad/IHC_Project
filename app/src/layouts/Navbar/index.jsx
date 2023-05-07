@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
-import OurLogo from '../static/images/logo.png'
-import User from '../static/images/user.svg'
-import HomeButton from '../static/images/home.svg'
+import OurLogo from '../../static/images/logo.png'
+import User from '../../static/images/user.svg'
+import HomeButton from '../../static/images/home.svg'
 
 
 function Navbar() {
@@ -45,6 +45,7 @@ function Navbar() {
     }
 
     return (
+        <>
         <div className="navbar bg-primary">
             <div className="flex-1">
                 <Link to={"/"} className="btn btn-ghost normal-case text-xl"><img src={OurLogo} width="45px" />SpeakEz</Link>
@@ -80,7 +81,7 @@ function Navbar() {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {LanguagesAvailable.map((lang) => (
-                            <li>
+                            <li key={lang.id}>
                                 <span onClick={() => switchLang(lang.id)} className="btn btn-ghost normal-case text-xl">{lang.name}<img className="rounded" src={lang.flagimg} width="40px" /></span>
                             </li>
                         ))}
@@ -105,6 +106,7 @@ function Navbar() {
                 </div>
             </div>
         </div>
+        </>
     );
 }
 
