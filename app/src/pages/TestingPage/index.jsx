@@ -1,7 +1,9 @@
+import TeacherCard from "../../components/TeacherCard";
+
 const TestingPage = () => {
     return (
         <>
-        <div>Testing Page</div>
+        
         </>
     );
     }

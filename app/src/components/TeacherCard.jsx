@@ -74,7 +74,7 @@ function TeacherCard() {
     return (
         <div>
             {TeachersList.map((teacher) => (
-                <div className="card lg:card-side bg-base-100 rounded-100 shadow-xl m-10">
+                <div className="card lg:card-side rounded-100 shadow-xl m-10" style={{ backgroundColor: 'rgb(240, 240, 240)' }}>
                     <figure><img className="w-20" src={teacher.profileimg} alt="Album" /></figure>
                     <div className="card-body">
                         <div class="grid grid-cols-4 gap-4">
@@ -84,9 +84,9 @@ function TeacherCard() {
                                         <div class="badge badge-outline text-green-600/100 bg-base-100 hover:text-green-700">{teacher.country}</div>
                                     </div>
                                 </h1>
-                                <p>Description:{teacher.description}</p>
+                                <p className="mb-2">Description:{teacher.description}</p>
 
-                                <div class="card-actions">
+                                <div class="card-actions mb-2">
                                     <a>Lectures:</a>
                                     {Object.keys(teacher.lecture_langs).map((lang) => (
                                         <div class="badge badge-outline">{lang}</div>
@@ -99,22 +99,25 @@ function TeacherCard() {
                             <div>
                                 <h2 className="font-bold">Known Languages</h2>
                                 {Object.keys(teacher.known_langs).map((lang) => (
-                                    <p><span className="indent-4">{lang.padEnd(15, " ")}</span> <progress class={proficiencybar(teacher, lang)[1]} value={proficiencybar(teacher, lang)[0]} max="100"></progress></p>
+                                    <div>
+                                        <span className="indent-4">{lang} [{teacher.known_langs[lang]}]</span><br/>
+                                        <span><progress class={proficiencybar(teacher, lang)[1]} value={proficiencybar(teacher, lang)[0]} max="100"></progress></span>
+                                    </div>
                                 ))}
                             </div>
                             <div>
-                                <h2 className="font-bold">Certifications</h2>
+                                <h2 className="font-bold mb-2">Certifications</h2>
                                 {teacher.certifications.map((cert) => (
                                     <p>{pickEmoji()} {cert}</p>
                                 ))}
                             </div>
                             <div>
-                                <h2 className="font-bold">Stats and Contact</h2>
+                                <h2 className="font-bold mb-2">Stats and Contact</h2>
                                 <p>⭐ Rating: {teacher.rating}</p>
                                 <p>⭐ Reviews: {teacher.reviews}</p>
 
                                 <div className="card-actions justify-end">
-                                    <button className="btn btn-primary">Schedule Here</button>
+                                    <button className="btn btn-primary hover:scale-105 transition-transform duration-300">Schedule Here</button>
                                 </div>
                             </div>
 

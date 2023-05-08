@@ -94,7 +94,7 @@ function Navbar() {
                         <label tabIndex={0} className="btn btn-ghost">
                             <div className="indicator">
                                 {langFlag}
-                                <span className="badge badge-sm indicator-item">3</span>
+                                {/* <span className="badge badge-sm indicator-item">3</span> */}
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
