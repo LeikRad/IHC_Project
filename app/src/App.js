@@ -3,8 +3,8 @@ import './App.css';
 // import Navbar from './Components/Navbar/Navbar';
 // import Home from './Components/Home';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Navbar from './Components/Navbar';
-import TeacherCard from './Components/TeacherCard'; 
+import Navbar from './components/Navbar';
+import TeacherCard from './components/TeacherCard'; 
 
 function App() {
   return (
