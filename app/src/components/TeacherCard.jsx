@@ -17,7 +17,8 @@ function TeacherCard() {
             price: "10",
             rating: "4.8",
             reviews: "425",
-            profileimg: "http://www.utcswindon.co.uk/wp-content/uploads/2018/04/Ben.jpg"
+            profileimg: "http://www.utcswindon.co.uk/wp-content/uploads/2018/04/Ben.jpg",
+            want_teach_to: ["Indiferent"],
         },
         {
             id: "2",
@@ -34,7 +35,8 @@ function TeacherCard() {
             price: "17",
             rating: "4.4",
             reviews: "96",
-            profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg"
+            profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg",
+            want_teach_to: ["Basic", "Intermediate"],
         },
         {
             id: "3",
@@ -51,7 +53,8 @@ function TeacherCard() {
             price: "25",
             rating: "4.4",
             reviews: "96",
-            profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg"
+            profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg",
+            want_teach_to: ["Basic"],
         },
     ]
     const Emoji = ["📝", "📌", "📚", "🔎", "📎", "📊", "📜", "🪪"]
