@@ -3,7 +3,7 @@ import TeacherCard from "../../components/TeacherCard";
 const TestingPage = () => {
     return (
         <>
-        
+            Test
         </>
     );
     }
