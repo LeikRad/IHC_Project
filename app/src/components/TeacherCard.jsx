@@ -92,7 +92,7 @@ function TeacherCard() {
                                         <div class="badge badge-outline">{lang}</div>
                                     ))}
                                 </div>
-
+                                        
                                 <p>💰 Price: {teacher.price}$</p>
 
                             </div>
