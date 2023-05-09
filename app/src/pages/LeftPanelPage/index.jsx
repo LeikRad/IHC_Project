@@ -1,9 +1,10 @@
-import LeftPanel from "../layouts/LeftPanel";
+import LeftPanel from "../layouts/LeftPanel/index.jsx";
 
 const LeftPanelPage = () => {
     return (
         <>
-        <div class="grid grid-row-4">
+        <div class="grid grid-cols-4">
+            oioioi  
             <LeftPanel/>
         </div>
         </>
