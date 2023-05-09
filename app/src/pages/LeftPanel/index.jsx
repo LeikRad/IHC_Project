@@ -1,4 +1,4 @@
-import LeftPanel from "../Calendar";
+import LeftPanel from "../layouts/LeftPanel";
 
 const LeftPanelPage = () => {
     return (
