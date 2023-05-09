@@ -5,6 +5,7 @@ import Layout, { CleanLayout } from "./layouts/Layout";
 
 import TestingPage from "./pages/TestingPage";
 import TestingPage2 from "./pages/TestingPage2";
+import UserM from "./pages/UserMainPage";
 
 const routes = ({ noNav }) => [
     {
@@ -13,6 +14,7 @@ const routes = ({ noNav }) => [
         children: [
             { path: "/", element: <TestingPage /> },
             { path: "/profile", element: <TestingPage2 /> },
+            { path: "/main", element: <UserM />},
             { path: "*", element: <Navigate to="/" /> },
         ],
     }
