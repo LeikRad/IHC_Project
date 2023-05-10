@@ -13,10 +13,5 @@ const Layout = () => {
   );
 }
 
-const CleanLayout = () => {
-  <div className="container mx-auto">
-    <Outlet />
-  </div>
-}
 
-export { Layout as default, CleanLayout };
+export { Layout as default };
