@@ -16,11 +16,11 @@ const Login_Register_Page = () => {
     return (
         <>
             <div className="flex flex-col items-center h-screen">
-                <div className="tabs">
+                <div className="tabs scale-150">
                     <a className={`tab tab-bordered ${activeTab === 0 ? "tab-active" : ""}`} onClick={() => handleTabChange(0)}>Login</a>
                     <a className={`tab tab-bordered ${activeTab === 1 ? "tab-active" : ""}`} onClick={() => handleTabChange(1)}>Register</a>
                 </div>
-                <div style={{margin: "2rem", width: "80%"}}>
+                <div style={{margin: "1rem", width: "80%"}}>
                     {activeTab === 0 ? (
                         <Login />
                     ) : (
