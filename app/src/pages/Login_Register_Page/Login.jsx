@@ -4,7 +4,7 @@ const Login = () => {
     return (
         <>
             <div className="flex flex-col items-center h-screen">
-                <div className="hero mt-20 bg-base-100">
+                <div className="hero mt-20 bg-base-100 rounded-xl">
                     <div className="hero-content flex-col lg:flex-row-reverse bg-gray-400 rounded-xl">
                         <div className="text-center lg:text-left">
                             <h1 className="text-5xl font-bold">Login now!</h1>

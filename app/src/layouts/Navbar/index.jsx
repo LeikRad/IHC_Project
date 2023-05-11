@@ -56,7 +56,7 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar bg-primary">
+            <div className="navbar bg-green-700/70">
                 <div className="flex-1">
                     <Link to={"/"} className="btn btn-ghost normal-case text-xl"><img src={OurLogo} width="45px" />SpeakEz</Link>
                 </div>
