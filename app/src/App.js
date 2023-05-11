@@ -4,47 +4,32 @@ import './App.css';
 // import Navbar from './Components/Navbar/Navbar';
 // import Home from './Components/Home';
 
+import { useStudentStore } from './stores/useStudentStore';
+
 import routes from './routes';
 
-const Routes = () => {
-  return useRoutes(routes({ noNav: false })); // change to true to hide navbar
+const AuthRoutes = () => {
+  return useRoutes(routes({ noNav: false, auth: true })); // change to true to hide navbar
 };
 
+const UnAuthRoutes = () => {
+  return useRoutes(routes({ noNav: false, auth: false })); // change to false to show navbar
+};
+
+
 function App() {
-    // <BrowserRouter>
+  const logged_in = useStudentStore((state) => state.logged_in);
 
-    //   <Navbar />
-    //   {/* <div className="App">
-    //     <header className="App-header">
-    //       <img src={logo} className="App-logo" alt="logo" />
-    //       <p>
-    //         Edit <code>src/App.js</code> and save to reload.
-    //       </p>
-    //       <a
-    //         className="App-link"
-    //         href="https://reactjs.org"
-    //         target="_blank"
-    //         rel="noopener noreferrer"
-    //       >
-    //         Learn React
-    //       </a>
-    //       <h1 className="text-3xl font-bold underline">
-    //         Hello world! (If this is underlined and bold tailwind is working)
-    //       </h1>
-    //       <button className="btn gap-2">
-    //         Inbox
-    //         (If this button is blue and has a +99 in purple daisyui is working)
-    //         <div className="badge badge-secondary">+99</div>
-    //       </button>
-    //     </header>
-    //   </div> */}
-    //   <Routes>
-    //     <Route path="/" element={<h1>hoemee</h1>} />
-    //     <Route path="/profile" element={<h1>profile</h1>} />
-    //   </Routes>
-    // </BrowserRouter>
-
-    return <Routes />;
+  console.log(logged_in)
+  if (logged_in) {
+    console.log("auth")
+    return <AuthRoutes />;
+  } else if (!logged_in) {
+    console.log("unauth")
+    return <UnAuthRoutes />;
+  } else {
+    return <h1>error</h1>;
+  }
 }
 
 export default App;
