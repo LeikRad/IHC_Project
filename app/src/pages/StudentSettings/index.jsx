@@ -40,7 +40,7 @@ const StudentSettings = () => {
     const removeLearnLang = () => {
         if (learnLang > 1) {
             setNumLearnLang(learnLang - 1)
-        }else{
+        } else {
             showWarning({ color: "alert-error", message: "You need to have at least one language!" })
         }
     }
@@ -53,8 +53,12 @@ const StudentSettings = () => {
 
     return (
         <div className="mx-auto flex w-full max-w-[80rem] grow flex-col px-1 py-8 sm:px-5 md:py-16">
-            <h1 className="text-4xl mt-10 mb-3 justify-start ">Personalize your student profile:</h1>
-             {warning.on == 1 && (<Warning color={warning.color} message={warning.message} />
+            <h1 className="text-4xl mt-10 mb-10 justify-start ">Personalize your student profile:</h1>
+            <div class="w-[30%]">
+                <label for="text" class="label-text block mb-2 text-sm font-medium dark:text-white">Phone Number</label>
+                <input type="floating_language" id="language" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999999999" required />
+            </div>
+            {warning.on == 1 && (<Warning color={warning.color} message={warning.message} />
             )}<div className="grid grid-cols-[50%_50%] ">
                 <div style={{ alignItems: 'center' }}>
                     <h1 className="text-2xl mt-10 mb-3">List the languages you want to learn:</h1>
