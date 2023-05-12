@@ -11,21 +11,21 @@ module.exports = {
     themes: [{
       mytheme: {
 
-        "primary": "#38bdf8",
+        "primary": "#344e41", // dark green, meio embaçado
 
-        "secondary": "#34d399",
+        "secondary": "#3a5a40", //green, mais vivo
 
-        "accent": "#c4b5fd",
+        "accent": "#588157", // green fusco
 
-        "neutral": "#111827",
+        "neutral": "#dad7cd", // branco
 
-        "base-100": "#FFFFFF",
+        "base-100": "#b5c49c", // verde claro
 
         "info": "#3b82f6",
 
         "success": "#84cc16",
 
-        "warning": "#FBBD23",
+        "warning": "#FF9944",
 
         "error": "#F87272",
       },
