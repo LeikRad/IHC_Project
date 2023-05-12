@@ -11,6 +11,7 @@ import Login_Register_Page from "./pages/Login_Register_Page";
 import TeacherM from "./pages/TeacherMainPage";
 import LandingPage from "./pages/LandingPage";
 import StudentSettings from "./pages/StudentSettings";
+import TeacherSettings from "./pages/TeacherSettings";
 
 const routes = ({ auth }) => [
     {
@@ -37,6 +38,7 @@ const routes = ({ auth }) => [
             { path: "/teacher", element: <TeacherM /> }, 
             { path: "/announce", element: <Announce />}, 
             { path: "/studentsettings", element: <StudentSettings /> },
+            { path: "/teachersettings", element: <TeacherSettings /> },
             { path: "/profile", element: <TestingPage2 /> },
             { path: "/profile", element: <TestingPage2 /> },
             

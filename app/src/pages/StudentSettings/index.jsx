@@ -62,7 +62,6 @@ const StudentSettings = () => {
 
                         return (
                             <AddLanguage cards={i} />
-
                         );
                     }
                     )}
