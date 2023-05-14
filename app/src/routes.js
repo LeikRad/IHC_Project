@@ -20,8 +20,7 @@ const routes = ({ logged_in, is_student }) => [
         element: <Layout />,
         children: [
             { path: "/", element: <LandingPage /> },
-            { path: "/student", element: <UserM /> },       //Sorry for messing with your routes
-            { path: "/teacher", element: <TeacherM /> },    
+            { path: "*", element: <Navigate to="/" />}
         ],
     },
     {
@@ -41,6 +40,7 @@ const routes = ({ logged_in, is_student }) => [
             { path: "/profile", element: (is_student) ? <TestingPage2 /> : <TestingPage2 /> },            
         ],
     },
+    
 ]
 
 export default routes;

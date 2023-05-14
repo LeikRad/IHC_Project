@@ -56,14 +56,14 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar bg-green-700/70">
+            <div className="navbar bg-base-100">
                 <div className="flex-1">
                     <Link to={"/"} className="btn btn-ghost normal-case text-xl gap-4"><img src={OurLogo} width="45px" />SpeakEz</Link>
                 </div>
                 {loggedIn ? (
                     <>
                         <div className="flex-none">
-                            <Link to={"/student"} className="dropdown dropdown-end">
+                            <Link to={"/homepage"} className="dropdown dropdown-end">
                                 <span className="btn btn-ghost normal-case text-xl"><img src={HomeButton} width="40px" /></span>
                             </Link>
 

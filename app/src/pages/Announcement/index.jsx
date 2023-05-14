@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 import { useDatabaseStore } from "../../stores/useDatabaseStore";
-import { useStudentStore } from "../../stores/useStudentStore";
+import { useUserStore } from "../../stores/useUserStore";
 
 const Announcement = () => {
     const [lang, setLang] = useState("");
@@ -13,13 +13,13 @@ const Announcement = () => {
     const [description, setDescription] = useState("");
 
     const id = useDatabaseStore((state) => state.Announcements).length + 1;
-    const name = useStudentStore((state) => state.first_name) + " " + useStudentStore((state) => state.last_name);
-    const profileimg = useStudentStore((state) => state.image);
-    const country = useStudentStore((state) => state.nationality);
-    const email = useStudentStore((state) => state.email);
-    const phone = useStudentStore((state) => state.phone);
-    const known_langs = useStudentStore((state) => state.list_of_known_languages);
-    const certifications = useStudentStore((state) => state.list_of_certifications);
+    const name = useUserStore((state) => state.first_name) + " " + useUserStore((state) => state.last_name);
+    const profileimg = useUserStore((state) => state.image);
+    const country = useUserStore((state) => state.nationality);
+    const email = useUserStore((state) => state.email);
+    const phone = useUserStore((state) => state.phone);
+    const known_langs = useUserStore((state) => state.list_of_known_languages);
+    const certifications = useUserStore((state) => state.list_of_certifications);
     
     const announcements = useDatabaseStore((state) => state.Announcements);
 

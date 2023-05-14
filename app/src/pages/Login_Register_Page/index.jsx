@@ -1,5 +1,5 @@
 import React from "react";
-import { useStudentStore } from "../../stores/useUserStore";
+import { useUserStore } from "../../stores/useUserStore";
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";

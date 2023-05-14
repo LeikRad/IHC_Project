@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-import { useStudentStore } from '../../stores/useStudentStore';
+import { useUserStore } from '../../stores/useUserStore';
 import { useDatabaseStore } from '../../stores/useDatabaseStore';
 import AddLanguage from "./AddLanguage";
 import { useState } from "react";

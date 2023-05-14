@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useDatabaseStore } from "../../stores/useDatabaseStore";
-import { useStudentStore } from "../../stores/useStudentStore";
+import { useUserStore } from "../../stores/useUserStore";
 import { Link } from "react-router-dom";
 
 

@@ -11,23 +11,37 @@ module.exports = {
     themes: [{
       mytheme: {
 
-        "primary": "#344e41", // dark green, meio embaçado
+        "primary": "#c2e074", // pastel green
 
-        "secondary": "#3a5a40", //green, mais vivo
+        "secondary": "#ffcc6c", // pastel yellow
 
-        "accent": "#588157", // green fusco
+        "accent": "#df4b57", // vermelho 
 
-        "neutral": "#dad7cd", // branco
+        "neutral": "#f1f2da", // branco
 
-        "base-100": "#b5c49c", // verde claro
+        "base-100": "#feffe6", // yellow tinted white
 
-        "info": "#3b82f6",
+        "primary-content" : "#000000", // black
 
-        "success": "#84cc16",
+        "secondary-content" : "#000000", // black
 
-        "warning": "#FF9944",
+        "accent-content" : "#000000", // black
+        
+        "info": "#2d32f4",
 
-        "error": "#F87272",
+        "info-content": "#ffffff", // white
+
+        "success": "#3eaa59",
+
+        "success-content": "#000000", // black
+
+        "warning": "#dbab0a",
+
+        "warning-content": "#000000", // black
+
+        "error": "#f85149",
+
+        "error-content": "#000000", // black
       },
     },],
   },

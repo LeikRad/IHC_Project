@@ -1,6 +1,6 @@
 import React from "react";
 
-import { useStudentStore } from '../../stores/useStudentStore';
+import { useUserStore } from '../../stores/useUserStore';
 import { useDatabaseStore } from '../../stores/useDatabaseStore';
 
 const AddLanguage = (props) => {

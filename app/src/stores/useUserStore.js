@@ -6,7 +6,7 @@ const defaultTheme = localStorage.getItem("th") || "dark";
 document.body.setAttribute('data-theme', defaultTheme);
 
 export const useUserStore = create((set, get) => ({
-    logged_in: false,
+    logged_in: true,
 
     is_student: false,
     
