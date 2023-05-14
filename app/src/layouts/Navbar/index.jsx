@@ -63,7 +63,7 @@ function Navbar() {
                 {loggedIn ? (
                     <>
                         <div className="flex-none">
-                            <Link to={"/"} className="dropdown dropdown-end">
+                            <Link to={"/student"} className="dropdown dropdown-end">
                                 <span className="btn btn-ghost normal-case text-xl"><img src={HomeButton} width="40px" /></span>
                             </Link>
 

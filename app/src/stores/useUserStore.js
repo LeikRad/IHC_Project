@@ -17,7 +17,9 @@ export const useUserStore = create((set, get) => ({
     email: null,
     nationality: null,
     image: null,    
+    phone: null,
 
+    list_of_certifications: null,
     list_of_know_languages: null,
     list_of_learn_languages: null,
     list_of_classes: null,
@@ -40,6 +42,7 @@ export const useUserStore = create((set, get) => ({
             email: null,
             nationality: null,
             image: null,
+            phone: null,
 
             list_of_know_languages: null,
             list_of_learn_languages: null,
