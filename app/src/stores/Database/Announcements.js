@@ -8,7 +8,7 @@ const announcements = [
         known_langs: { "Portuguese": "native", "English": "C1", "French": "B2" },
         lecture_langs: { "Portuguese": "native", "French": "B2" },
         description: "I am a teacher",
-        certifications: ["Cambridge C1", "DELF B2", "DALF C1"],
+        certifications: ["zCambridge C1", "DELF B2", "DALF C1"],
         price: "10",
         rating: "4.8",
         reviews: "425",

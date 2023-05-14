@@ -12,6 +12,7 @@ import TeacherM from "./pages/TeacherMainPage";
 import LandingPage from "./pages/LandingPage";
 import StudentSettings from "./pages/StudentSettings";
 import TeacherSettings from "./pages/TeacherSettings";
+import TeacherAnnounce from "./pages/TeacherAnnounce";
 
 const routes = ({ logged_in, is_student }) => [
     {
