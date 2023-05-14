@@ -12,6 +12,7 @@ import TeacherM from "./pages/TeacherMainPage";
 import LandingPage from "./pages/LandingPage";
 import StudentSettings from "./pages/StudentSettings";
 import TeacherSettings from "./pages/TeacherSettings";
+import TeacherAnnounce from "./pages/TeacherAnnounce";
 
 const routes = ({ auth }) => [
     {
@@ -39,6 +40,7 @@ const routes = ({ auth }) => [
             { path: "/announce", element: <Announce />}, 
             { path: "/studentsettings", element: <StudentSettings /> },
             { path: "/teachersettings", element: <TeacherSettings /> },
+            { path: "/announce/:id", element: <TeacherAnnounce /> },
             { path: "/profile", element: <TestingPage2 /> },
             { path: "/profile", element: <TestingPage2 /> },
             

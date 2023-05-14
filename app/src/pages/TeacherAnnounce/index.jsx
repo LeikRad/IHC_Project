@@ -1,16 +1,16 @@
 import React from "react";
-// import { useDatabaseStore } from "../stores/useDatabaseStore";
-import { Link } from "react-router-dom";
 
-function TeacherCard(props) {
-    const teacher = props.teacher;
-    // const TeachersList = useDatabaseStore((state) => state.Announcements);
-    // console.log(TeachersList)
-    const Emoji = ["📝", "📌", "📚", "🔎", "📎", "📊", "📜", "🪪"]
+import TeacherCard from "../../components/TeacherCard";
+import { useParams } from "react-router-dom";
 
-    const pickEmoji = () => {
-        return Emoji[Math.floor(Math.random() * Emoji.length)]
-    }
+import { useDatabaseStore } from "../../stores/useDatabaseStore";
+
+
+const TeacherAnnounce = () => {
+    const params = useParams().id;
+    const TeachersList = useDatabaseStore((state) => state.Announcements);
+
+    const teacher = TeachersList.filter((teacher) => teacher.id === params)[0];
 
     const proficiencybar = (teacher, lang) => {
         const profic = teacher.known_langs[lang]
@@ -25,10 +25,12 @@ function TeacherCard(props) {
 
     return (
         <div>
+            <h1 className="text-3xl font-bold text-center my-8">Teacher Announcement</h1> {/* Title */}
+            <div>
             <div className="card lg:card-side rounded-100 shadow-xl m-10" style={{ backgroundColor: 'rgb(240, 240, 240)' }}>
                 <figure><img className="w-20" src={teacher.profileimg} alt="Album" /></figure>
                 <div className="card-body">
-                    <div class="grid grid-cols-4 gap-4">
+                    {/* <div class="grid grid-cols-4 gap-4"> */}
                         <div>
                             <h1 className="card-title mb-5">{teacher.name}
                                 <div class="card-actions">
@@ -74,14 +76,16 @@ function TeacherCard(props) {
                             </div>
                         </div>
 
-                    </div>
+                    {/* </div> */}
 
 
                 </div>
             </div>
 
         </div>
+
+        </div>
     );
 }
 
-export default TeacherCard;
+export default TeacherAnnounce;
