@@ -1,5 +1,5 @@
 import React from "react";
-import { useStudentStore } from "../../stores/useStudentStore";
+import { useUserStore } from "../../stores/useUserStore";
 import { useState } from "react";
 import Login from "./Login";
 import Register from "./Register";
@@ -7,7 +7,7 @@ import Footer from "../../components/Footer";
 
 
 const Login_Register_Page = () => {
-    const [activeTab, setActiveTab] = useState(1);
+    const [activeTab, setActiveTab] = useState(0);
 
     const handleTabChange = (index) => {
         setActiveTab(index);

@@ -2,8 +2,13 @@ import TeacherCard from "../../components/TeacherCard";
 import CalendarPanel from "../../components/CalendarPanel";
 import PickerModal from "../../components/PickerModal";
 import React from "react";
+import { useDatabaseStore } from "../../stores/useDatabaseStore";
+
 
 const UserMainPage = () => {
+
+    const TeachersList = useDatabaseStore((state) => state.Announcements);
+    
     return (
         <>
             <div>
