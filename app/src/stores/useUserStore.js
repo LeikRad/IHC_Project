@@ -5,11 +5,11 @@ const defaultTheme = localStorage.getItem("th") || "dark";
 
 document.body.setAttribute('data-theme', defaultTheme);
 
-export const useStudentStore = create((set, get) => ({
+export const useUserStore = create((set, get) => ({
     logged_in: false,
 
-    theme: defaultTheme,
-
+    is_student: false,
+    
     first_name: null,
     final_name: null,
     username: null,
@@ -21,12 +21,6 @@ export const useStudentStore = create((set, get) => ({
     list_of_know_languages: null,
     list_of_learn_languages: null,
     list_of_classes: null,
-
-    setTheme: (theme) => {
-        localStorage.setItem("th", theme);
-        document.body.setAttribute('data-theme', theme);
-        set({ theme });
-    },
 
     login: (username, password) => {    
         set(() => ({

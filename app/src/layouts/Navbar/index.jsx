@@ -6,12 +6,12 @@ import OurLogo from '../../static/images/logo.png'
 import User from '../../static/images/user.svg'
 import HomeButton from '../../static/images/home.svg'
 
-import { useStudentStore } from '../../stores/useStudentStore';
+import { useUserStore } from '../../stores/useUserStore';
 import { useDatabaseStore } from '../../stores/useDatabaseStore';
 
 function Navbar() {
 
-    const loggedIn = useStudentStore((state) => state.logged_in);
+    const loggedIn = useUserStore((state) => state.logged_in);
 
     const  LanguagesAvailable = useDatabaseStore((state) => state.LanguagesAvailable);
 
@@ -51,14 +51,14 @@ function Navbar() {
     }
 
     function logout() {
-        useStudentStore.getState().logout()
+        useUserStore.getState().logout()
     }
 
     return (
         <>
             <div className="navbar bg-green-700/70">
                 <div className="flex-1">
-                    <Link to={"/"} className="btn btn-ghost normal-case text-xl"><img src={OurLogo} width="45px" />SpeakEz</Link>
+                    <Link to={"/"} className="btn btn-ghost normal-case text-xl gap-4"><img src={OurLogo} width="45px" />SpeakEz</Link>
                 </div>
                 {loggedIn ? (
                     <>
@@ -159,9 +159,12 @@ function Navbar() {
                             </div>
                             <div>
                                 <Link to="/login">
-                                    <button className="btn btn-ghost normal-case text-xl">Login / Register <div className="w-10 rounded-full">
+                                    <button className="btn btn-ghost normal-case text-xl gap-4">
+                                        Login / Register 
+                                    <div className="w-10 rounded-full">
                                         <img src={User} />
-                                    </div></button>
+                                    </div>
+                                    </button>
                                 </Link>
                             </div>
                         </div>
