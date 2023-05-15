@@ -38,6 +38,8 @@ const routes = ({ logged_in, is_student }) => [
             { path: "/announce", element: <Announce />}, 
             { path: "/settings", element: (is_student) ? <StudentSettings /> : <TeacherSettings /> },
             { path: "/profile", element: (is_student) ? <TestingPage2 /> : <TestingPage2 /> },            
+            { path: "/announcement/:id", element: <TeacherAnnounce /> },
+
         ],
     },
     
