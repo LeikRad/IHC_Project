@@ -107,7 +107,7 @@ function TeacherCard(props) {
                             <p>⭐ Reviews: {teacher.reviews}</p>
 
                             <div className="card-actions justify-end">
-                                <Link to={`/announce/${teacher.id}`}>
+                                <Link to={`/announcement/${teacher.id}`}>
                                     <button className="btn btn-primary hover:scale-105 transition-transform duration-300">
                                         Schedule Here
                                     </button>

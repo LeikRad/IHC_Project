@@ -5,6 +5,7 @@ import { Calendar } from "react-modern-calendar-datepicker";
 import 'react-time-picker/dist/TimePicker.css';
 import 'react-clock/dist/Clock.css';
 
+import { Link } from "react-router-dom";
 
 const PickerModal = () => {
   const [selectedDays, setSelectedDays] = useState(null);
@@ -18,7 +19,7 @@ const PickerModal = () => {
         <div className="modal-box">
           <button className="btn btn-sm btn-circle absolute left-2 top-2">«</button>
           <label htmlFor="my-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-          
+
           <div className="flex flex-row gap-4 pt-10">
             <div className="basis-[50%]">
               <h3 className="font-bold text-lg">escolha o dia</h3>
@@ -35,15 +36,17 @@ const PickerModal = () => {
             </div>
 
           </div>
-          
+
           <div className="modal-action">
             <button className="btn" onClick={() => SetPicker(!picker)}>+</button>
-            <label htmlFor="my-modal" className="btn">Done</label>
+            <Link to="/homepage">
+              <label htmlFor="my-modal" className="btn">Done</label>
+            </Link>
           </div>
 
         </div>
       </div>
-      
+
     </>
   );
 };

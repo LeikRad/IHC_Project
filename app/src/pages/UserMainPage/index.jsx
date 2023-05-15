@@ -9,7 +9,7 @@ const UserMainPage = () => {
     console.log(TeachersList);
     return (
         <>
-            <div className="text-4xl py-10 flex items-start min-min-h-[calc(100vh-65.5px)]">
+            <div className="text-4xl py-10 flex items-start min-h-[calc(100vh-65.5px)]">
                 {/*<h1 className="text-3xl font-bold text-center my-8">Teacher's Offers</h1> {/* Title */}
                 <div className="flex-none px-10 w-[20%]">
                     <CalendarPanel />
@@ -28,7 +28,7 @@ const UserMainPage = () => {
                         </a>
                     </div>
 
-                    <div className="object-contain">
+                    <div className="object-contain text-base">
                         {TeachersList.map((teacher) => (
                             <TeacherCard key={teacher.id} teacher={teacher} />
                         ))}
