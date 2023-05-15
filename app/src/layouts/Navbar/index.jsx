@@ -5,7 +5,8 @@ import { useState } from 'react';
 import OurLogo from '../../static/images/logo.png'
 import User from '../../static/images/user.svg'
 import HomeButton from '../../static/images/home.svg'
-
+import { HiUser } from 'react-icons/hi'
+import { AiFillHome } from 'react-icons/ai'
 import { useUserStore } from '../../stores/useUserStore';
 import { useDatabaseStore } from '../../stores/useDatabaseStore';
 
@@ -56,15 +57,15 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar bg-base-100">
+            <div className="navbar bg-base-100 border">
                 <div className="flex-1">
                     <Link to={"/"} className="btn btn-ghost normal-case text-xl gap-4"><img src={OurLogo} width="45px" />SpeakEz</Link>
                 </div>
                 {loggedIn ? (
                     <>
-                        <div className="flex-none">
+                        <div className="flex-none gap-2 px-3">
                             <Link to={"/homepage"} className="dropdown dropdown-end">
-                                <span className="btn btn-ghost normal-case text-xl"><img src={HomeButton} width="40px" /></span>
+                                <span className="btn btn-ghost normal-case text-xl"><AiFillHome className='w-10 h-10' /></span>
                             </Link>
 
                             <div className="dropdown dropdown-end">
@@ -101,12 +102,10 @@ function Navbar() {
                                 </ul>
                             </div>
                             <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full">
-                                        <img src={User} />
-                                    </div>
+                                <label tabIndex={0} className="btn btn-ghost avatar">
+                                    <HiUser className="w-10 h-10"/>                                     
                                 </label>
-                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 border bg-neutral">
                                     <li>
                                         <Link to={"/profile"} className="justify-between">
                                             Profile
@@ -114,7 +113,7 @@ function Navbar() {
                                         </Link>
                                     </li>
                                     <li><a>Settings</a></li>
-                                    <li><a>Logout</a></li>
+                                    <li className="rounded-box hover:bg-error transition-colors ease-in" onClick={logout}><a>Logout</a></li>
                                 </ul>
                             </div>
                         </div>

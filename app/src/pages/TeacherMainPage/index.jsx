@@ -5,11 +5,15 @@ import No_disponibility from "./No_disponibility";
 
 const TeacherMainPage = () => {
     return (
-        <div>
-            <h1 className="text-4xl mb-10 flex justify-center">My Announcements</h1>
-            <No_regist />
-            <No_announce />
-            <No_disponibility />
+        <div className="text-4xl flex flex-col items-center  h-[calc(100vh-65.5px)]">
+            <div className="">
+                <h1 className="text-center py-10">My Announcements</h1>
+                <div>
+                    <No_regist />
+                    <No_announce />
+                    <No_disponibility />
+                </div>
+            </div>
         </div>
     );
 };

@@ -63,18 +63,18 @@ const TeacherSettings = () => {
             <div className="grid grid-cols-[50%_50%] ">
                 <div className="form-control mr-10">
                     <form>
-                        <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium label-text dark:text-white">Phone Number</label>
-                            <input type="floating_language" id="language" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999999999" required />
+                        <div className="mb-6">
+                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Phone Number</label>
+                            <input type="floating_language" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999999999" required />
                         </div>
 
-                        <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium label-text dark:text-white">Certificates</label>
+                        <div className="mb-6">
+                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Certificates</label>
 
                             {Array.from(Array(certificates), (e, i) => {
 
                                 return (
-                                    <input type="floating_language" id={i} class="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Certificate XY" required />
+                                    <input type="floating_language" id={i} className="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Certificate XY" required />
 
                                 );
                             }
@@ -85,22 +85,22 @@ const TeacherSettings = () => {
                             <btn onClick={removeCertificate} className="btn scale-75 btn-primary mb-5 ">Remove certificate</btn>
                         </div>
 
-                        <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium label-text dark:text-white">Description</label>
-                            <textarea id="message" rows="4" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe Yourself (your description will be displayed to future students)" required />
+                        <div className="mb-6">
+                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Description</label>
+                            <textarea id="message" rows="4" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe Yourself (your description will be displayed to future students)" required />
                         </div>
-                        <div class="mb-6">
-                            <label for="text" class="block mb-2 text-sm font-medium label-text dark:text-white">Profile Image</label>
-                            <input type="" id="language" class="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Only URLs" />
+                        <div className="mb-6">
+                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Profile Image</label>
+                            <input type="" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Only URLs" />
                         </div>
 
 
                     </form>
 
                     <div className="mt-10"/>
-                    <button class="text-white mr-2 bg-secondary hover:bg-primary hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save edition</button>
+                    <button className="text-white mr-2 bg-secondary hover:bg-primary hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save edition</button>
                     {/* <Link to="/"> */}
-                    <button class="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Discard Changes</button>
+                    <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Discard Changes</button>
                     {/* </Link> */}
                 </div>
                 <div>

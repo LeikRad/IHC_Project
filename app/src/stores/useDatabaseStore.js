@@ -8,12 +8,8 @@ export const useDatabaseStore = create((set, get) => ({
     Announcements: announcements,
 
     addAnnouncement: (announcement) => {
-        console.log(announcement);
-        console.log(get().Announcements)
         const Announcements = get().Announcements;
-        console.log(Announcements);
         Announcements.push(announcement);
-        console.log(Announcements);
         set((state) => ({
             Announcements: Announcements,
         }));
