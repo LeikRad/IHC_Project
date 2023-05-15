@@ -13,27 +13,23 @@ const CalendarPanel = () => {
   return (
     <>
       
-      <h2 className="text-3xl p-4">Minhas aulas</h2>
-      <div className="bg-base-200 px-4 container h-[100%] text-center ">
-        <button className="btn-secondary m-5">
-          <label className="swap">
-            <input type="checkbox" onClick={() => setToggle(!toggle)} />
-            <div className="swap-on"> exibir semana</div>
-            <div className="swap-off"> exibir mês </div>
-          </label>
+      <h2 className="text-3xl p-4 text-center pt-[51px]">Aulas Marcadas</h2>
+      <div className="bg-base-200 px-4 container h-[100%] text-center rounded-xl">
+        <button className="btn-secondary my-5 rounded-box w-full" onClick={() => setToggle(!toggle)} >
+            <div className={`${toggle ? "block" : "hidden"}`}> Semana </div>
+            <div className={`${toggle ? "hidden" : "block"}`}> Mês </div>
         </button>
         <figure>
-          <img className="w-full" src={(toggle && img) || (!toggle && img2)} alt="myWeek" />
+          <img className="w-full h-[20vh]" src={(toggle && img) || (!toggle && img2)} alt="myWeek" />
         </figure>
-        <ul className="list-group">
+        <ul className="list-group py-10">
           {MyClasses.map((item, index) => (
-            <li className="list-group-item flex py-2 px-2 gap-3" key={index}>
-              <img src={cal_icon} className="w-5"/>
+            <li className="list-group-item flex py-2 px-2 gap-3 text-lg" key={index}>
+              <img src={cal_icon} className="w-5 h-5"/>
               {item}
             </li>
           ))}
         </ul>
-        <label htmlFor="my-modal" className="btn">open modal</label>
       </div>
     </>
   );

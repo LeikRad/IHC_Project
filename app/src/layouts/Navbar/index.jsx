@@ -112,8 +112,14 @@ function Navbar() {
                                             <span className="badge">New</span>
                                         </Link>
                                     </li>
-                                    <li><a>Settings</a></li>
-                                    <li className="rounded-box hover:bg-error transition-colors ease-in" onClick={logout}><a>Logout</a></li>
+                                    <li>
+                                        <Link to={"/settings"} className="justify-between">
+                                        <a>Settings</a>
+                                        </Link>
+                                    </li>
+                                    <li className="rounded-box overflow-hidden hover:bg-error transition-colors ease-in" onClick={logout}>
+                                        <a>Logout</a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

@@ -14,7 +14,7 @@ const Login_Register_Page = () => {
 
     return (
         <>
-            <div className="flex flex-col justify-center text-center items-center h-[calc(100vh-65.5px)] backdrop-blur-[100px]">
+            <div className="flex flex-col justify-center text-center items-center min-h-[calc(100vh-65.5px)] backdrop-blur-[100px]">
                 <div className="flex flex-col pt-10 items-center h-screen">
                     <div className="tabs scale-150 font-bold">
                         <a

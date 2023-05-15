@@ -9,23 +9,19 @@ const UserMainPage = () => {
     console.log(TeachersList);
     return (
         <>
-            <div className="text-4xl flex items-center h-[calc(100vh-65.5px)]">
+            <div className="text-4xl py-10 flex items-start min-min-h-[calc(100vh-65.5px)]">
                 {/*<h1 className="text-3xl font-bold text-center my-8">Teacher's Offers</h1> {/* Title */}
-                <div className="flex-none w-[20%]">
-                    <div className="">
-                        <div className="">
-                            <CalendarPanel />
-                        </div>
-                    </div>
+                <div className="flex-none px-10 w-[20%]">
+                    <CalendarPanel />
                 </div>
-                <div className="flex flex-row w-[80%]">
-                    <div className="pt-4 ml-10 mb-10 tabs">
-                        <a className="tab tab-lg tab-lifted tab-active">
+                <div className="flex flex-col w-[80%]">
+                    <div className="pt-4 ml-10 tabs">
+                        <a className="tab tab-lg tab-bordered tab-active">
                             <h1 className="font-bold text-center">
                                 Search a new teacher
                             </h1>
                         </a>
-                        <a className="tab tab-lg tab-lifted">
+                        <a className="tab tab-lg tab-bordered">
                             <h1 className="font-bold text-center">
                                 My teachers
                             </h1>
@@ -37,9 +33,9 @@ const UserMainPage = () => {
                             <TeacherCard key={teacher.id} teacher={teacher} />
                         ))}
                     </div>
-                    <div>
+                    {/* <div>
                         <PickerModal />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </>

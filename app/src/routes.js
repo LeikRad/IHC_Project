@@ -36,7 +36,7 @@ const routes = ({ logged_in, is_student }) => [
         children: [
             { path: "/homepage", element: (is_student) ? <UserM /> : <TeacherM /> }, 
             { path: "/announce", element: <Announce />}, 
-            { path: "/settings", element:  (is_student) ? <StudentSettings /> : <TeacherSettings /> },
+            { path: "/settings", element: (is_student) ? <StudentSettings /> : <TeacherSettings /> },
             { path: "/profile", element: (is_student) ? <TestingPage2 /> : <TestingPage2 /> },            
         ],
     },

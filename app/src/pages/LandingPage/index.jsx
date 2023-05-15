@@ -5,7 +5,7 @@ const LandingPage = () => {
         <div>
             <svg
                     viewBox="0 0 100 100"
-                    className="absolute inset-0 h-[calc(100vh-65.5px)] w-screen -z-10"
+                    className="absolute inset-0 min-h-[calc(100vh-65.5px)] w-screen -z-10"
                 >
                     <defs>
                         <radialGradient
@@ -27,7 +27,7 @@ const LandingPage = () => {
                         transform="translate(50 50)"
                     />
                 </svg>
-            <div className="flex flex-col justify-center text-center items-center h-[calc(100vh-65.5px)] backdrop-blur-[100px]">
+            <div className="flex flex-col justify-center text-center items-center min-h-[calc(100vh-65.5px)] backdrop-blur-[100px]">
                 <div className="max-w-md ">
                     <h1 className="mb-5 text-5xl font-bold">SpeakEz</h1>
                     <p className="mb-5">
