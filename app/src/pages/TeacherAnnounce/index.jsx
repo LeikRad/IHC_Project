@@ -28,7 +28,7 @@ const TeacherAnnounce = () => {
 
     console.log(params);
     return (
-        <div className=" min-h-[calc(100vh-65.5px)]">
+        <div className=" min-h-[calc(100vh-65.5px)] ">
 
             <h1 className="text-3xl font-bold text-center my-8">Teacher Announcement</h1>
             <div className="text-4xl flex py-10 items-start ">

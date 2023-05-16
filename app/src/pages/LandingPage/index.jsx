@@ -5,7 +5,7 @@ const LandingPage = () => {
         <div>
             <svg
                     viewBox="0 0 100 100"
-                    className="absolute inset-0 min-h-[calc(100vh-65.5px)] w-screen -z-10"
+                    className="absolute inset-0 h-[calc(100vh-65.5px)] w-screen -z-10"
                 >
                     <defs>
                         <radialGradient

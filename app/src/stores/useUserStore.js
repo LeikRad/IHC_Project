@@ -1,13 +1,17 @@
 import { create } from 'zustand';
-
+import messages from './Database/messages';
 
 export const useUserStore = create((set, get) => ({
     accounts : [],
     
+    chats : messages,
+
     logged_in: false,
 
     is_student: false,
     
+    false_notifications: 0,
+
     first_name: null,
     final_name: null,
     username: null,
@@ -17,11 +21,20 @@ export const useUserStore = create((set, get) => ({
     image: null,    
     phone: null,
 
+    messages_to_read: null,
+    messages: null,
+
     list_of_certifications: null,
     list_of_know_languages: null,
     list_of_learn_languages: null,
     list_of_classes: null,
 
+    add_notification: () => {
+        set((state) => ({
+            false_notifications: state.false_notifications + 1,
+        }));
+    },
+    
     login: (email, password) => { 
         let account = null;  
         for (let i = 0; i < get().accounts.length; i++) {
@@ -69,6 +82,8 @@ export const useUserStore = create((set, get) => ({
             list_of_learn_languages: null,
             list_of_classes: null,
             list_of_certifications: null,
+            messages_to_read: null,
+            messages: null,
         }));
     },
 
@@ -91,6 +106,8 @@ export const useUserStore = create((set, get) => ({
             list_of_know_languages: null,
             list_of_learn_languages: null,
             list_of_classes: null,
+            messages_to_read: null,
+            messages: null,
         }));
         console.log(user["first_name"] + " " + user["final_name"])
         user["username"] = user["first_name"] + " " + user["final_name"];
@@ -100,6 +117,8 @@ export const useUserStore = create((set, get) => ({
         user["list_of_know_languages"] = null;
         user["list_of_learn_languages"] = null;
         user["list_of_classes"] = null;
+        user["messages_to_read"] = null;
+        user["messages"] = null;
         const accounts = get().accounts;
         accounts.push(user);
         console.log(get().accounts);
