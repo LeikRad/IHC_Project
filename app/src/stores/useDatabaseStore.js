@@ -7,5 +7,15 @@ export const useDatabaseStore = create((set, get) => ({
     LanguagesAvailable: languages,
     Announcements: announcements,
 
-    addAnnouncement: (announcement) => set(state => ({ Announcements: [...state.Announcements, announcement] })),
+    addAnnouncement: (announcement) => {
+        console.log(announcement);
+        console.log(get().Announcements)
+        const Announcements = get().Announcements;
+        console.log(Announcements);
+        Announcements.push(announcement);
+        console.log(Announcements);
+        set((state) => ({
+            Announcements: Announcements,
+        }));
+    }
 }));
