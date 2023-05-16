@@ -10,7 +10,7 @@ const PickerModal = () => {
     const [value, onChange] = useState("10:00");
     const [picker, SetPicker] = useState([]);
     const [time, setTimes] = useState("10:00");
-
+    const fake_notifications = useUserStore((state) => state.false_notifications)
     const changeTime = (e) => {
         setTimes(e.target.value);
     };
@@ -31,7 +31,9 @@ const PickerModal = () => {
             alert("Selecione um dia e uma hora");
             return;
         }
+        console.log(fake_notifications)
         useUserStore.getState().add_notification();
+        console.log(fake_notifications)
     };
 
     return (
@@ -81,7 +83,7 @@ const PickerModal = () => {
                         <button className="btn" onClick={addPicker}>
                             +
                         </button>
-                        <Link to="/homepage">
+                        <Link to="/homepage" onClick={donebutton}>
                             <label htmlFor="my-modal" className="btn">
                                 Done
                             </label>

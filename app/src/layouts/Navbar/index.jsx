@@ -138,7 +138,7 @@ function Navbar() {
                             <div className="dropdown dropdown-end">
                                 <label tabIndex={0} className="">
                                     <div className="indicator btn btn-ghost">
-                                        <span className={`badge badge-sm indicator-item bg-accent -translate-x-2 translate-y-[0.25rem] ${false_notifications == 0 ? "hidden" : "block"}`}>
+                                        <span className={`badge badge-sm indicator-item bg-accent w-5 h-5 -translate-x-2 translate-y-[0.25rem] ${false_notifications == 0 ? "hidden" : "block"}`}>
                                             {false_notifications}
                                         </span>
                                         <HiChat className="w-10 h-10" />
