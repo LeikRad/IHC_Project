@@ -25,7 +25,8 @@ const CalendarPanel = () => {
         <ul className="list-group py-10">
           {MyClasses.map((item, index) => (
             <li className="list-group-item flex py-2 px-2 gap-3 text-lg" key={index}>
-              <img src={cal_icon} className="w-5 h-5"/>
+              {/* <img src={cal_icon} className="w-5 h-5"/> */}
+              <div className="mr-3 ml-2 scale-150">📆</div>
               {item}
             </li>
           ))}

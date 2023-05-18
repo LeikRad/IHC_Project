@@ -91,7 +91,7 @@ const Announcement = () => {
                     <div className="mb-6">
                         <label
                             for="text"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900"
                         >
                             Language
                         </label>
@@ -99,7 +99,7 @@ const Announcement = () => {
                             type="floating_language"
                             onChange={onChangeLang}
                             id="language"
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                             placeholder="English"
                             required
                         />
@@ -107,7 +107,7 @@ const Announcement = () => {
                     <div className="space-y-2 mb-6">
                         <label
                             for="text"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900"
                         >
                             Want to Teach to
                         </label>
@@ -163,7 +163,7 @@ const Announcement = () => {
                     <div className="mb-3">
                         <label
                             for="text"
-                            className="mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="mb-2 text-sm font-medium text-gray-900"
                         >
                             Price{" "}
                         </label>
@@ -171,7 +171,7 @@ const Announcement = () => {
                             type="price"
                             id="price"
                             onChange={onChangePrice}
-                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-10 p-2.5 "
                             placeholder="10"
                             required
                         />{" "}
@@ -180,7 +180,7 @@ const Announcement = () => {
                     <div className="flex items-start mb-6">
                         <label
                             for="remember"
-                            className="text-sm font-medium text-gray-900 dark:text-gray-300 mr-2"
+                            className="text-sm font-medium text-gray-900"
                         >
                             Negotiable
                         </label>
@@ -190,14 +190,14 @@ const Announcement = () => {
                                 type="checkbox"
                                 onChange={onChangeNegotiable}
                                 value=""
-                                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                                className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 "
                             />
                         </div>
                     </div>
                     <div className="mb-6">
                         <label
                             for="message"
-                            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                            className="block mb-2 text-sm font-medium text-gray-900"
                         >
                             Short Description
                         </label>
@@ -205,19 +205,19 @@ const Announcement = () => {
                             id="message"
                             rows="4"
                             onChange={onChangeDescription}
-                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                             placeholder="What differentiate you from the competition"
                         ></textarea>
                     </div>
                 </form>
                 <div className="flex">
                     <Link to="/">
-                        <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                             Cancel
                         </button>
                     </Link>
                     <div className="px-3">
-                        <button onClick={submitAnnouncement} className=" text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        <button onClick={submitAnnouncement} className=" text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                             Publish
                         </button>
                     </div>

@@ -4,20 +4,27 @@ import { Calendar } from "@amir04lm26/react-modern-calendar-date-picker";
 import "react-clock/dist/Clock.css";
 import { useUserStore } from "../stores/useUserStore";
 import { Link } from "react-router-dom";
+import Warning from "./Warning";
+import { useEffect } from "react";
 
-const PickerModal = () => {
+const PickerModal = ({ onChangeVariable }) => {
     const [selectedDays, setSelectedDays] = useState(null);
     const [value, onChange] = useState("10:00");
     const [picker, SetPicker] = useState([]);
     const [time, setTimes] = useState("10:00");
     const fake_notifications = useUserStore((state) => state.false_notifications)
+
+    const [warning, setWarning] = useState({ on: 0, color: "alert-warning", message: "You need to have at least one language!" })
+
+
     const changeTime = (e) => {
         setTimes(e.target.value);
     };
 
     const addPicker = () => {
         if (selectedDays === null || time === "") {
-            alert("Selecione um dia e uma hora");
+            // alert("Selecione um dia e uma hora");
+            showWarning({ color: "alert-warning", message: "Select a day and hour!" })
             return;
         }
         selectedDays.time = time;
@@ -26,9 +33,14 @@ const PickerModal = () => {
         console.log(picker);
     };
 
+    const showWarning = (props) => {
+        setWarning({ on: 1, color: props.color, message: props.message })
+    }
+
     const donebutton = () => {
         if (picker.length === 0) {
-            alert("Selecione um dia e uma hora");
+            showWarning({ color: "alert-warning", message: "Schedule something first." })
+            // alert("Selecione um dia e uma hora");
             return;
         }
         console.log(fake_notifications)
@@ -36,10 +48,22 @@ const PickerModal = () => {
         console.log(fake_notifications)
     };
 
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setWarning({ on: 0, color: "alert-error", message: "Select a day and hour!" })
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, [warning]);
+
+
+    const showWarningMainPage = () => {
+        onChangeVariable({ color: "alert-warning", message: "Schedule something first." });
+      };
     return (
-        <>  
+        <>
             <input type="checkbox" id="my-modal" className="modal-toggle" />
             <div className="modal">
+                {warning.on == 1 && (<Warning color={warning.color} message={warning.message} />)}
                 <div className="modal-box">
                     <button className="btn btn-sm btn-circle absolute left-2 top-2">
                         «
@@ -81,13 +105,18 @@ const PickerModal = () => {
 
                     <div className="modal-action">
                         <button className="btn" onClick={addPicker}>
-                            +
+                            Schedule
                         </button>
-                        <Link to="/homepage" onClick={donebutton}>
-                            <label htmlFor="my-modal" className="btn">
-                                Done
-                            </label>
-                        </Link>
+                        <div onClick={donebutton}>
+                            {picker.length === 0 ? (
+                                <label htmlFor="" className="btn">
+                                    Done
+                                </label>) :
+                                <label htmlFor="my-modal" onClick={showWarningMainPage} className="btn">
+                                    Done
+                                </label>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

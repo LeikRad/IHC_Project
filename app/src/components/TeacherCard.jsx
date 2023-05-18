@@ -10,30 +10,9 @@ function TeacherCard(props) {
         return Emoji[Math.floor(Math.random() * Emoji.length)];
     };
 
-    const proficiencybar = (teacher, lang) => {
-        const profic = teacher.known_langs[lang];
-        if (profic === "native")
-            return [100, "items-end progress progress-info w-56"];
-        if (profic === "C2")
-            return [90, "items-end progress progress-success w-56"];
-        if (profic === "C1")
-            return [80, "items-end progress progress-success w-56"];
-        if (profic === "B2")
-            return [70, "items-end progress progress-accent w-56"];
-        if (profic === "B1")
-            return [50, "items-end progress progress-accent-600 w-56"];
-        if (profic === "A2")
-            return [30, "items-end progress progress-warning w-56"];
-        if (profic === "A1")
-            return [20, "items-end progress progress-warning w-56"];
-    };
-
     return (
         <div className="w-full">
-            <div
-                className="card lg:card-side rounded-100 shadow-xl m-10"
-                style={{ backgroundColor: "rgb(240, 240, 240)" }}
-            >
+            <div className="card lg:card-side rounded-100 shadow-xl m-10 hover:shadow-2xl" style={{ backgroundColor: "rgb(240, 240, 240)" }}>
                 <figure>
                     <img
                         className="w-20"
@@ -44,53 +23,34 @@ function TeacherCard(props) {
                 <div className="card-body">
                     <div className="grid grid-cols-4 gap-4">
                         <div>
-                            <h1 className="card-title mb-5">
+                            <div className="card-actions mb-5">
+                                {/* <a>Lectures:</a> */}
+                                {Object.keys(teacher.lecture_langs).map(
+                                    (lang) => (
+                                        <h1 className="text-4xl text-warning">
+                                            {lang} Class
+                                        </h1>
+                                    )
+                                )}
+                            </div>
+                            <h1 className="card-title">
                                 {teacher.name}
-                                <div className="card-actions">
-                                    <div className="badge badge-outline text-green-600/100 bg-base-100 hover:text-green-700">
-                                        {teacher.country}
-                                    </div>
-                                </div>
+
                             </h1>
+                            <div className="card-actions mb-5">
+                                <div className="badge badge-outline text-green-600/100 bg-base-100 hover:text-green-700">
+                                    <a>Country: {teacher.country}</a>
+                                </div>
+                            </div>
                             <p className="mb-2">
                                 Description:{teacher.description}
                             </p>
 
-                            <div className="card-actions mb-2">
-                                <a>Lectures:</a>
-                                {Object.keys(teacher.lecture_langs).map(
-                                    (lang) => (
-                                        <div className="badge badge-outline">
-                                            {lang}
-                                        </div>
-                                    )
-                                )}
-                            </div>
+
 
                             <p>💰 Price: {teacher.price}$</p>
                         </div>
-                        <div>
-                            <h2 className="font-bold">Known Languages</h2>
-                            {Object.keys(teacher.known_langs).map((lang) => (
-                                <div>
-                                    <span className="indent-4">
-                                        {lang} [{teacher.known_langs[lang]}]
-                                    </span>
-                                    <br />
-                                    <span>
-                                        <progress
-                                            className={
-                                                proficiencybar(teacher, lang)[1]
-                                            }
-                                            value={
-                                                proficiencybar(teacher, lang)[0]
-                                            }
-                                            max="100"
-                                        ></progress>
-                                    </span>
-                                </div>
-                            ))}
-                        </div>
+
                         <div>
                             <h2 className="font-bold mb-2">Certifications</h2>
                             {teacher.certifications.map((cert) => (
@@ -105,8 +65,9 @@ function TeacherCard(props) {
                             </h2>
                             <p>⭐ Rating: {teacher.rating}</p>
                             <p>⭐ Reviews: {teacher.reviews}</p>
-
-                            <div className="card-actions justify-end">
+                        </div>
+                        <div>
+                            <div className="card-actions flex justify-end">
                                 <Link to={`/announcement/${teacher.id}`}>
                                     <button className="btn btn-primary hover:scale-105 transition-transform duration-300">
                                         Schedule Here

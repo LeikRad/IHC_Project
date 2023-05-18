@@ -1,6 +1,11 @@
 import React from "react";
+import { useUserStore } from "../../stores/useUserStore";
+import {Link} from "react-router-dom";
+
 
 const LandingPage = () => {
+    const loggedIn = useUserStore((state) => state.logged_in);
+
     return (
         <div>
             <svg
@@ -36,7 +41,16 @@ const LandingPage = () => {
                         with eager students for a truly immersive language
                         journey.
                     </p>
+                    {loggedIn ? (
+                        <Link to="/homepage">
+                        <button className="btn btn-primary">Get Started</button>
+                        </Link>
+                    ) : 
+                    <Link to="/login">
                     <button className="btn btn-primary">Get Started</button>
+                    </Link>
+                    }
+                    
                 </div>
             </div>
         </div>

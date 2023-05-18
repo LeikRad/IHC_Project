@@ -47,12 +47,8 @@ const TeacherSettings = () => {
         }
     }
 
-
-
     const showWarning = (props) => {
         setWarning({ on: 1, color: props.color, message: props.message })
-
-
     }
 
     return (
@@ -64,17 +60,17 @@ const TeacherSettings = () => {
                 <div className="form-control mr-10">
                     <form>
                         <div className="mb-6">
-                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Phone Number</label>
-                            <input type="floating_language" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="999999999" required />
+                            <label for="text" className="block mb-2 text-sm font-medium label-text">Phone Number</label>
+                            <input type="floating_language" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="999999999" required />
                         </div>
 
                         <div className="mb-6">
-                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Certificates</label>
+                            <label for="text" className="block mb-2 text-sm font-medium label-text">Certificates</label>
 
                             {Array.from(Array(certificates), (e, i) => {
 
                                 return (
-                                    <input type="floating_language" id={i} className="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Certificate XY" required />
+                                    <input type="floating_language" id={i} className="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Certificate XY" required />
 
                                 );
                             }
@@ -86,22 +82,26 @@ const TeacherSettings = () => {
                         </div>
 
                         <div className="mb-6">
-                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Description</label>
-                            <textarea id="message" rows="4" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Describe Yourself (your description will be displayed to future students)" required />
+                            <label for="text" className="block mb-2 text-sm font-medium label-text">Description</label>
+                            <textarea id="message" rows="4" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Describe Yourself (your description will be displayed to future students)" required />
                         </div>
                         <div className="mb-6">
-                            <label for="text" className="block mb-2 text-sm font-medium label-text dark:text-white">Profile Image</label>
-                            <input type="" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Only URLs" />
+                            <label for="text" className="block mb-2 text-sm font-medium label-text">Profile Image</label>
+                            <input type="" id="language" className="bg-neutral border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Only URLs" />
                         </div>
 
 
                     </form>
 
                     <div className="mt-10"/>
-                    <button className="text-white mr-2 bg-secondary hover:bg-primary hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Save edition</button>
+                    <Link to="/homepage">
+                    <button className="text-white mr-3 bg-secondary hover:bg-primary hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center ">Save edition</button>
+                    
+                    
                     {/* <Link to="/"> */}
-                    <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Discard Changes</button>
+                    <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center ">Discard Changes</button>
                     {/* </Link> */}
+                    </Link>
                 </div>
                 <div>
                     <h1 className="text-2xl mt-10 mb-3 justify-start ">List the languages you know:</h1>
