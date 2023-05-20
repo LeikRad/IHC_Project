@@ -9,17 +9,9 @@ import { useDatabaseStore } from "../../stores/useDatabaseStore";
 import CalendarPanel from "../../components/CalendarPanel";
 import PickerModal from "../../components/PickerModal";
 import Warning from "../../components/Warning";
-import StaticDiv from "./StaticDiv";
 
 const TeacherAnnounce = () => {
     const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-    const reviews = ["The teacher I had was exceptional. Their teaching methods were engaging and effective, making the learning process enjoyable.",
-        "I highly recommend this teacher. They had a thorough understanding of the subject and were able to explain concepts clearly.",
-        "The teacher was patient and understanding. They created a supportive environment that encouraged active participation and learning.",
-        "I was impressed with the teacher's knowledge and expertise. They were able to answer all my questions and provide insightful explanations.",
-        , "The teacher's enthusiasm for teaching was evident in every class. Their passion for the subject motivated and inspired me to excel."]
-    const fake_names = ["Sophie Williams (English)", "Juan Rodriguez (Spanish)", "Anna Petrova (Russian)", "Ahmed Hassan (Egyptian)", "Mei Chen (Chinese)"]
 
     var count = 0;
 
@@ -36,7 +28,7 @@ const TeacherAnnounce = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setWarning({ on: 0, color: "alert-error", message: "Select a day and hour!" })
-        }, 7000);
+        }, 1000);
         return () => clearTimeout(timer);
     }, [warning]);
 
@@ -59,7 +51,6 @@ const TeacherAnnounce = () => {
             return [20, "items-end progress progress-warning w-56"];
     };
 
-    console.log(params);
     return (
         <div className=" min-h-[calc(100vh-65.5px)] ">
             {warning.on == 1 && (<Warning color={"alert-success"} message={"Appointment Scheduled successfuly. Check your inbox messages to check for updates. "} />)}
@@ -120,8 +111,6 @@ const TeacherAnnounce = () => {
                         <a className="btn btn-primary w-[15%] ml-4 text-2xl">Price: {Teacher.price}$</a>
                     </a>
 
-
-
                     <a className="text-2xl font-bold mt-5">Certificates:</a>
                     <div className="flex flex-row flex-wrap mt-2">
                         {Teacher.certifications.map((certificate) => (
@@ -144,30 +133,31 @@ const TeacherAnnounce = () => {
                 <div className="flex-none px-10 w-[20%]">
                     <a className="text-2xl font-bold mt-5">📝 Reviews:</a>
                     <div className="flex flex-col mt-2">
-                        {reviews.map((review) => {
-                            const randomRating = Math.floor(Math.random() * 100);
-                            if (randomRating < 80) {
-                                return null;
-                            } else {
-                                count = count + 1;
-                            }
-                            return (
-                                <div className="text-sm">
-                                    <div className="card bg-base-200 mb-2 text-primary-content">
-                                        <div className="card-body">
-                                            <h6 className="text-sm card-title">{fake_names[Math.floor(Math.random() * 2 + 1)]}</h6>
-                                            {"⭐".repeat(Math.floor(Math.random() * 2 + 3))}
-                                            <p>{review}</p>
+                        {
+                            (Teacher.reviews2.length === 0) ? (
+                                <p className="text-xl font-bold mt-5">No reviews yet</p>
+                            ) : (
+                                Teacher.reviews2.map((reviewX) => {
+                                    return (
+                                        <div className="text-sm">
+                                            <div className="card bg-base-200 mb-2 text-primary-content">
+                                                <div className="card-body">
+                                                    <h6 className="text-sm card-title">{reviewX.nome}</h6>
+                                                    {"⭐".repeat(reviewX.score)}
+                                                    <p>{reviewX.review_}</p>
+
+                                                </div>
+                                            </div>
 
                                         </div>
-                                    </div>
+                                    )
 
-                                </div>
+                                })
+
                             )
-                        })}
-                        {count === 0 && <p className="text-xl font-bold mt-5">No reviews yet</p>}
+                        }
+
                     </div>
-                    {/* <StaticDiv reviews={reviews} count={count} fake_names={fake_names}/> */}
 
                 </div>
 

@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import OurLogo from "../../static/images/logo.png";
 import User from "../../static/images/user.svg";
+import Login from "../../static/images/Login.png";
 import HomeButton from "../../static/images/home.svg";
 import { HiUser, HiChat } from "react-icons/hi";
 import { AiFillHome } from "react-icons/ai";
@@ -248,8 +249,8 @@ function Navbar() {
                                 <Link to="/login">
                                     <button className="btn btn-ghost normal-case text-xl gap-4">
                                         Login / Register
-                                        <div className="w-10 rounded-full">
-                                            <img src={User} />
+                                        <div className="w-8 rounded-full">
+                                            <img src={Login} />
                                         </div>
                                     </button>
                                 </Link>

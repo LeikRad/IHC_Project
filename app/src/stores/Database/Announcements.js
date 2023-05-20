@@ -15,6 +15,8 @@ const announcements = [
         negotiable: true,
         profileimg: "http://www.utcswindon.co.uk/wp-content/uploads/2018/04/Ben.jpg",
         want_teach_to: ["Indiferent"],
+        reviews2: []
+        
     },
     {
         id: "2",
@@ -32,6 +34,10 @@ const announcements = [
         negotiable: false,
         profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg",
         want_teach_to: ["Basic", "Intermediate"],
+        reviews2: [ {nome: "Sophie Williams (English)", score: 5, review_: "The teacher I had was exceptional. Their teaching methods were engaging and effective, making the learning process enjoyable."},
+            {nome: "Anna Petrova (Russian)", score: 4, review_: "I highly recommend this teacher. They had a thorough understanding of the subject and were able to explain concepts clearly."},
+            {nome: "Mei Chen (Chinese)", score: 5, review_: "The teacher was patient and understanding. They created a supportive environment that encouraged active participation and learning."},
+            ],
     },
     {
         id: "3",
@@ -49,6 +55,10 @@ const announcements = [
         negotiable: false,
         profileimg: "https://www.fairviewer.org/wp-content/uploads/2017/12/1Q01257.jpg",
         want_teach_to: ["Basic"],
+        reviews2: [{nome: "Juan Rodriguez (Spanish)", score: 5, review_: "I was impressed with the teacher's knowledge and expertise. They were able to answer all my questions and provide insightful explanations."},
+        {nome: "Ahmed Hassan (Egyptian)", score: 4, review_: "The teacher's enthusiasm for teaching was evident in every class. Their passion for the subject motivated and inspired me to excel."}
+
+        ],
     },
 ]
 
