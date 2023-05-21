@@ -32,7 +32,7 @@ function Navbar() {
     };
 
     const [langFlag, setLangFlag] = useState(
-        imgToFlag(LanguagesAvailable[1].flagimg)
+        imgToFlag(LanguagesAvailable[0].flagimg)
     );
 
     const [langName, setLangName] = useState(""); // search bar
