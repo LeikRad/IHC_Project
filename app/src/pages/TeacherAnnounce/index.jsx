@@ -9,6 +9,7 @@ import { useDatabaseStore } from "../../stores/useDatabaseStore";
 import CalendarPanel from "../../components/CalendarPanel";
 import PickerModal from "../../components/PickerModal";
 import Warning from "../../components/Warning";
+import { useUserStore } from "../../stores/useUserStore";
 
 const TeacherAnnounce = () => {
     const lorem = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -17,12 +18,10 @@ const TeacherAnnounce = () => {
 
     const params = useParams().id;
     const TeachersList = useDatabaseStore((state) => state.Announcements);
-    console.log("TeachersList: ");
-    console.log(TeachersList);
+    const is_student = useUserStore((state) => state.is_student);
 
     const Teacher = TeachersList.filter((teacher) => teacher.id === params)[0];
-    console.log("Teacher: ");
-    console.log(Teacher);
+
     const [warning, setWarning] = useState({ on: 0, color: "alert-warning", message: "You need to have at least one language!" })
 
     const showWarning = (props) => {
@@ -137,9 +136,12 @@ const TeacherAnnounce = () => {
 
                     <p className="text-2xl font-bold mt-5">Overall Rating: {Teacher.rating} ⭐</p>
 
+                    {is_student && (
                     <div className="justify-center mt-5 flex flex-row">
                         <label htmlFor="my-modal" className="btn btn-primary border-green-500  scale-150">Schedule a Class</label>
                     </div>
+                    )}
+                    
 
                     <div>
                         <PickerModal onChangeVariable={showWarning} />

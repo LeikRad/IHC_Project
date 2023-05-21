@@ -15,15 +15,15 @@ const TeacherSettings = () => {
     const [registed, setRegisted] = useState(useUserStore((state) => state.completed_registation));
 
     const[phone, setPhone] = useState("")
-
     const changePhone = (e) => {
         setPhone(e.target.value)
     }
 
-    const [certifications, setCertifications] = useState([])
-
-    const changeCertification = (certification) => {
-        setCertifications([...certifications, "XPTO"])
+    const [certifications, setCertifications] = useState(Array(10).fill(''));
+    const changeCertification = (e) => {
+        const updatedCertifications = [...certifications];
+        updatedCertifications[e.target.id] = e.target.value;
+        setCertifications(updatedCertifications);
     }
 
     const [description, setDescription] = useState("")
@@ -61,6 +61,7 @@ const TeacherSettings = () => {
 
     const addCertificate = () => {
         setNumCertificates(certificates + 1)
+
     }
 
     const removeCertificate = () => {
@@ -81,16 +82,21 @@ const TeacherSettings = () => {
     }
 
     const submitProfile = () => {
+        const tempCertifications = [];
+        certifications.forEach(element => {
+            if (element !== "") {
+                tempCertifications.push(element)
+            }
+        });
 
         const data = {  
             phone: phone,
-            certifications: certifications,
+            certifications: tempCertifications,
             description: description,
             profile_picture: profile_picture,
             list_of_know_languages: { "Example1": "native", "Example2": "C1", "Example3": "B2" },
         }
-        console.log("profile submitted: ")
-        console.log(data)
+
 
         useUserStore.getState().update_user(data)
         
@@ -125,7 +131,7 @@ const TeacherSettings = () => {
                             {Array.from(Array(certificates), (e, i) => {
 
                                 return (
-                                    <input type="floating_language" onChange={changeCertification} id={i} className="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Certificate XY" required />
+                                    <input type="floating_language" id={i} onChange={changeCertification} className="bg-neutral mb-1 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Certificate XY" required />
 
                                 );
                             }

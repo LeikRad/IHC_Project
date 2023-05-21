@@ -61,7 +61,7 @@ const TeacherMainPage = () => {
 
                                         <TeacherCard key={teacher.id} teacher={teacher} />
                                         <div className="flex flex-row justify-center">
-                                        <button onClick={() => deleted(teacher)} className="btn btn-primary">Delete Announcement</button>
+                                        <button onClick={() => deleted(teacher)} className="btn btn-primary mb-2">Delete Announcement</button>
                                         </div>
                                     </div>
                                 </React.Fragment>

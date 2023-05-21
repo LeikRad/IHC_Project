@@ -1,10 +1,13 @@
 import React from "react";
 // import { useDatabaseStore } from "../stores/useDatabaseStore";
 import { Link } from "react-router-dom";
+import { useUserStore } from "../stores/useUserStore";
 
 function TeacherCard(props) {
     const teacher = props.teacher;
     const Emoji = ["📝", "📌", "📚", "🔎", "📎", "📊", "📜", "🪪"];
+    const is_student = useUserStore((state) => state.is_student);
+
 
     const pickEmoji = () => {
         return Emoji[Math.floor(Math.random() * Emoji.length)];
@@ -15,10 +18,10 @@ function TeacherCard(props) {
             <div className="card lg:card-side rounded-100 shadow-xl m-10 hover:shadow-2xl" style={{ backgroundColor: "rgb(240, 240, 240)" }}>
                 <figure>
                     {!teacher.profileimg ? (
-                        <img className="w-40" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
+                        <img className="w-40 rounded-xl" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
                     ) : (
                         <img
-                            className="w-40"
+                            className="w-40 rounded-xl"
                             src={teacher.profileimg}
                             alt="Album"
                         />
@@ -78,7 +81,7 @@ function TeacherCard(props) {
                             <div className="card-actions flex justify-end">
                                 <Link to={`/announcement/${teacher.id}`}>
                                     <button className="btn btn-primary hover:scale-105 transition-transform duration-300">
-                                        Schedule Here
+                                        {is_student ? (<span>Schedule Here</span>) : (<span>View</span>)}
                                     </button>
                                 </Link>
                             </div>
