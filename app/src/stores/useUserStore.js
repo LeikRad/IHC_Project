@@ -9,6 +9,10 @@ export const useUserStore = create((set, get) => ({
     logged_in: false,
 
     is_student: false,
+
+    completed_registation: false,
+    completed_disponibility: false,
+    completed_announcement: false,
     
     false_notifications: 0,
 
@@ -122,6 +126,39 @@ export const useUserStore = create((set, get) => ({
         const accounts = get().accounts;
         accounts.push(user);
         console.log(get().accounts);
+    },
+
+    add_registation: () => {
+        set(() => ({
+            completed_registation: true,
+        }));
+    },
+
+    add_disponibility: () => {
+        set(() => ({
+            completed_disponibility: true,
+        }));
+    },
+
+    add_announcement: () => {
+        set(() => ({
+            completed_announcement: true,
+        }));
+    },
+
+    update_user: (user) => {
+        // phone: phone,
+        //     certifications: certifications,
+        //     description: description,
+        //     profile_picture: profile_picture
+
+        set(() => ({
+            phone: user["phone"],
+            list_of_certifications: user["certifications"],
+            description: user["description"],
+            image: user["profile_picture"],
+            list_of_know_languages: user["list_of_know_languages"],
+        }));
     },
 
 }));

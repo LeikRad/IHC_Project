@@ -52,6 +52,8 @@ const Register = () => {
     };
 
     const register_teacher_check = () => {
+        console.log("first_name" + first_name)
+        console.log("last_name" + last_name)
         if (!register_check()) {
             return;
         }
@@ -147,6 +149,7 @@ const Register = () => {
                                 </label>
                                 <input
                                     type="text"
+                                    id="first_name"
                                     placeholder="Stefen"
                                     onChange={change_first_name}
                                     style={{ width: "47%" }}
@@ -155,6 +158,7 @@ const Register = () => {
                                 />
                                 <input
                                     type="text"
+                                    id="last_name"
                                     onChange={change_last_name}
                                     placeholder="Jonhson"
                                     style={{ width: "47%" }}

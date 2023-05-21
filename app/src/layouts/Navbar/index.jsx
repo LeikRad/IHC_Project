@@ -11,12 +11,16 @@ import { AiFillHome } from "react-icons/ai";
 import { useUserStore } from "../../stores/useUserStore";
 import { useDatabaseStore } from "../../stores/useDatabaseStore";
 import { default as Chat } from "../../components/Chat";
+import { MdAddBox } from "react-icons/md";
 
 function Navbar() {
     const loggedIn = useUserStore((state) => state.logged_in);
     const false_notifications = useUserStore(
         (state) => state.false_notifications
     );
+
+    const is_student = useUserStore((state) => state.is_student);
+    const registed = useUserStore((state) => state.completed_registation);
 
     console.log(false_notifications);
     const LanguagesAvailable = useDatabaseStore(
@@ -78,6 +82,23 @@ function Navbar() {
                 </div>
                 {loggedIn ? (
                     <>
+                        {!is_student ? (
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="">
+                                    <div className="indicator btn btn-ghost">
+                                        {registed ? (<Link to={"/announce"}>
+                                            <MdAddBox className="w-10 h-10" />
+                                        </Link>) : (
+                                            <Link to={"/settings"}>
+                                                <MdAddBox className="w-10 h-10" />
+                                            </Link>
+                                        )}
+
+                                    </div>
+                                </label>
+                            </div>
+                        ) : (
+                            null)}
                         <div className="dropdown dropdown-end">
                             <label tabIndex={0} className="btn btn-ghost">
                                 <div className="indicator">
@@ -174,7 +195,7 @@ function Navbar() {
                                             to={"/settings"}
                                             className="justify-between"
                                         >
-                                            <a>Settings</a>
+                                            <a>Personalize</a>
                                         </Link>
                                     </li>
                                     <li

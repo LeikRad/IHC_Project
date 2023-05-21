@@ -12,20 +12,22 @@ const Announcement = () => {
     const [negotiable, setNegotiable] = useState(false);
     const [description, setDescription] = useState("");
 
-    const id = useDatabaseStore((state) => state.Announcements).length + 1;
+    const id = '' + (useDatabaseStore((state) => state.Announcements).length + 1);
     const name =
         useUserStore((state) => state.first_name) +
         " " +
-        useUserStore((state) => state.last_name);
+        useUserStore((state) => state.final_name);
     const profileimg = useUserStore((state) => state.image);
     const country = useUserStore((state) => state.nationality);
     const email = useUserStore((state) => state.email);
     const phone = useUserStore((state) => state.phone);
-    const known_langs = useUserStore((state) => state.list_of_known_languages);
+    const known_langs = useUserStore((state) => state.list_of_know_languages);
     const certifications = useUserStore(
         (state) => state.list_of_certifications
     );
 
+    console.log("phone = " + phone);
+    console.log(known_langs);
     const announcements = useDatabaseStore((state) => state.Announcements);
 
     const onChangeLang = (e) => {
@@ -50,6 +52,7 @@ const Announcement = () => {
 
     const submitAnnouncement = () => {
         console.log(announcements);
+        console.log("name = " + name);
         console.log("id language = " + lang);
         console.log("id level = " + level);
         console.log("price = " + price);
@@ -72,15 +75,22 @@ const Announcement = () => {
             reviews: 0,
             profileimg: profileimg,
             want_to_teach: [level],
+            reviews2: [],
         };
 
         useDatabaseStore.getState().addAnnouncement(data);
 
-        console.log(announcements);
+        createAnnouncement();
+
+        console.log(data);
         // redirect to teacher main page
 
-        window.location.href = "/homepage";
+        // window.location.href = "/homepage";
     };
+
+    const createAnnouncement = () => {
+        useUserStore.getState().add_announcement();
+    }
 
     return (
         <div>
@@ -118,6 +128,7 @@ const Announcement = () => {
                                 id="Basic Level"
                                 name="options"
                                 className="form-radio text-indigo-600"
+                                required
                             />
                             <span className="ml-2">Basic Level Students</span>
                         </label>
@@ -129,6 +140,7 @@ const Announcement = () => {
                                 id="Intermediate Level"
                                 name="options"
                                 className="form-radio text-indigo-600"
+                                required
                             />
                             <span className="ml-2">
                                 Intermediate Level Students
@@ -142,6 +154,7 @@ const Announcement = () => {
                                 id="Advanced Level"
                                 name="options"
                                 className="form-radio text-indigo-600"
+                                required
                             />
                             <span className="ml-2">
                                 Advanced Level Students
@@ -155,6 +168,7 @@ const Announcement = () => {
                                 id="Anyone"
                                 name="options"
                                 className="form-radio text-indigo-600"
+                                required
                             />
                             <span className="ml-2">Anyone</span>
                         </label>
@@ -211,15 +225,18 @@ const Announcement = () => {
                     </div>
                 </form>
                 <div className="flex">
-                    <Link to="/">
+                    <Link to="/homepage">
                         <button className="text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                             Cancel
                         </button>
                     </Link>
+
                     <div className="px-3">
-                        <button onClick={submitAnnouncement} className=" text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
-                            Publish
-                        </button>
+                        <Link to="/homepage">
+                            <button onClick={submitAnnouncement} className=" text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                                Publish
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

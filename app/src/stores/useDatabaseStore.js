@@ -13,5 +13,15 @@ export const useDatabaseStore = create((set, get) => ({
         set((state) => ({
             Announcements: Announcements,
         }));
+    },
+
+    removeAnnouncement: (announcement) => {
+        const Announcements = get().Announcements;
+        const index = Announcements.indexOf(announcement);
+        Announcements.splice(index, 1);
+        set((state) => ({
+            Announcements: Announcements,
+        }));
     }
+
 }));

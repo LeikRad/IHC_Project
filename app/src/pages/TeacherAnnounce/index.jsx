@@ -17,8 +17,12 @@ const TeacherAnnounce = () => {
 
     const params = useParams().id;
     const TeachersList = useDatabaseStore((state) => state.Announcements);
+    console.log("TeachersList: ");
+    console.log(TeachersList);
 
     const Teacher = TeachersList.filter((teacher) => teacher.id === params)[0];
+    console.log("Teacher: ");
+    console.log(Teacher);
     const [warning, setWarning] = useState({ on: 0, color: "alert-warning", message: "You need to have at least one language!" })
 
     const showWarning = (props) => {
@@ -28,7 +32,7 @@ const TeacherAnnounce = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setWarning({ on: 0, color: "alert-error", message: "Select a day and hour!" })
-        }, 1000);
+        }, 7000);
         return () => clearTimeout(timer);
     }, [warning]);
 
@@ -53,19 +57,30 @@ const TeacherAnnounce = () => {
 
     return (
         <div className=" min-h-[calc(100vh-65.5px)] ">
-            {warning.on == 1 && (<Warning color={"alert-success"} message={"Appointment Scheduled successfuly. Check your inbox messages to check for updates. "} />)}
+            {warning.on == 1 && (<Warning color={"alert-success"} message={"Appointment Scheduled successfuly. Check your inbox messages to check for updates."} />)}
 
 
             <h1 className="text-3xl font-bold text-center my-8">Teacher Announcement</h1>
             <div className="text-4xl flex py-10 items-start ">
-
                 <div className="flex-none px-10 w-[20%]">
                     <CalendarPanel />
                 </div>
                 <div className="flex flex-col w-[60%] ml-10 text-base">
                     <div className="flex flex-row">
                         <div className="flex flex-col">
-                            <img src={Teacher.profileimg} alt="Profile" className="w-60 mb-5 rounded-xl" />
+                            <figure>
+                                {!Teacher.profileimg ?
+                                (
+                                    <img className="w-40" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
+                                ) : (
+                                    <img
+                                        className="w-40"
+                                        src={Teacher.profileimg}
+                                        alt="Album"
+                                    />
+                                )}
+
+                            </figure>
                         </div>
                         <div className="flex flex-col mt-5 ml-10">
                             <h2 className="font-bold">Known Languages</h2>
@@ -101,11 +116,11 @@ const TeacherAnnounce = () => {
 
                     <a className="text-3xl text- font-bold mt-5">
                         <a>
-                            {Object.keys(Teacher.lecture_langs).map((lang) => (
-                                <a className="mr-2">
-                                    {lang}
-                                </a>
-                            ))}
+                            {/* {Object.keys(Teacher.lecture_langs).map((lang) => ( */}
+                            <a className="mr-2">
+                                {Teacher.lecture_langs}
+                            </a>
+                            {/* ))} */}
                         </a>
                         Lecture:
                         <a className="btn btn-primary w-[15%] ml-4 text-2xl">Price: {Teacher.price}$</a>

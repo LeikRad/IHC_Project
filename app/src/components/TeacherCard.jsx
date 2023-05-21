@@ -14,24 +14,32 @@ function TeacherCard(props) {
         <div className="w-full">
             <div className="card lg:card-side rounded-100 shadow-xl m-10 hover:shadow-2xl" style={{ backgroundColor: "rgb(240, 240, 240)" }}>
                 <figure>
-                    <img
-                        className="w-20"
-                        src={teacher.profileimg}
-                        alt="Album"
-                    />
+                    {!teacher.profileimg ? (
+                        <img className="w-40" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
+                    ) : (
+                        <img
+                            className="w-40"
+                            src={teacher.profileimg}
+                            alt="Album"
+                        />
+                    )}
+
                 </figure>
                 <div className="card-body">
                     <div className="grid grid-cols-4 gap-4">
                         <div>
                             <div className="card-actions mb-5">
                                 {/* <a>Lectures:</a> */}
-                                {Object.keys(teacher.lecture_langs).map(
+                                {/* {Object.keys(teacher.lecture_langs).map(
                                     (lang) => (
                                         <h1 className="text-4xl text-warning">
                                             {lang} Class
                                         </h1>
                                     )
-                                )}
+                                )} */}
+                                <h1 className="text-4xl text-warning">
+                                    {teacher.lecture_langs} Class
+                                </h1>
                             </div>
                             <h1 className="card-title">
                                 {teacher.name}
@@ -43,7 +51,7 @@ function TeacherCard(props) {
                                 </div>
                             </div>
                             <p className="mb-2">
-                                Description:{teacher.description}
+                                Description: {teacher.description}
                             </p>
 
 
@@ -55,7 +63,7 @@ function TeacherCard(props) {
                             <h2 className="font-bold mb-2">Certifications</h2>
                             {teacher.certifications.map((cert) => (
                                 <p>
-                                    {pickEmoji()} {cert}
+                                    {cert}
                                 </p>
                             ))}
                         </div>
