@@ -15,7 +15,7 @@ function TeacherCard(props) {
 
     return (
         <div className="w-full">
-            <div className="card lg:card-side rounded-100 shadow-xl m-10 hover:shadow-2xl" style={{ backgroundColor: "rgb(240, 240, 240)" }}>
+            <div className="card lg:card-side rounded-100 shadow-xl m-10 bg-base-200/50 hover:shadow-2xl" >
                 <figure>
                     {!teacher.profileimg ? (
                         <img className="w-40 rounded-xl" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />

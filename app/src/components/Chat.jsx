@@ -24,7 +24,7 @@ const Chat = () => {
                             <div className="flex flex-col gap-4 h-[10vh] justify-center border-b border-primary hover:bg-primary/50" onClick={() => handleChat(chat["to"], chat["messages"])}>
                                 <a class="flex items-center px-3 py-2 text-sm transition duration-150 ease-in-out cursor-pointer">
                                 <img class="object-cover w-10 h-10 rounded-full"
-                                    src="https://cdn.pixabay.com/photo/2018/09/12/12/14/man-3672010__340.jpg" alt="username" />
+                                    src={chat["img"]} alt="username" />
                                 <div class="w-full flex flex-col pb-2">
                                     <div class="flex justify-between">
                                         <span class="block ml-2 justify-center text-gray-600 font-bold">{chat["to"]}</span>

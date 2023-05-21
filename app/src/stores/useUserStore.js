@@ -2,9 +2,9 @@ import { create } from 'zustand';
 import messages from './Database/messages';
 
 export const useUserStore = create((set, get) => ({
-    accounts : [],
-    
-    chats : messages,
+    accounts: [],
+
+    chats: messages,
 
     logged_in: false,
 
@@ -13,7 +13,7 @@ export const useUserStore = create((set, get) => ({
     completed_registation: false,
     completed_disponibility: false,
     completed_announcement: false,
-    
+
     false_notifications: 0,
 
     first_name: null,
@@ -22,7 +22,7 @@ export const useUserStore = create((set, get) => ({
     password: null,
     email: null,
     nationality: null,
-    image: null,    
+    image: null,
     phone: null,
 
     messages_to_read: null,
@@ -38,14 +38,14 @@ export const useUserStore = create((set, get) => ({
             false_notifications: state.false_notifications + 1,
         }));
     },
-    
-    login: (email, password) => { 
-        let account = null;  
+
+    login: (email, password) => {
+        let account = null;
         for (let i = 0; i < get().accounts.length; i++) {
             if (get().accounts[i]["email"] === email && get().accounts[i]["password"] === password) {
                 account = get().accounts[i];
                 break;
-        
+
             }
         }
         set(() => ({
@@ -65,7 +65,7 @@ export const useUserStore = create((set, get) => ({
 
             list_of_classes: account["list_of_classes"],
             list_of_certifications: account["list_of_certifications"],
-            
+
         }));
     },
 
@@ -81,6 +81,13 @@ export const useUserStore = create((set, get) => ({
             image: null,
             phone: null,
             is_student: false,
+
+            completed_registation: false,
+            completed_disponibility: false,
+            completed_announcement: false,
+
+            false_notifications: 0,
+
 
             list_of_know_languages: null,
             list_of_learn_languages: null,
@@ -105,7 +112,7 @@ export const useUserStore = create((set, get) => ({
             is_student: user["is_student"],
             image: null,
             phone: null,
-            
+
             list_of_certifications: null,
             list_of_know_languages: null,
             list_of_learn_languages: null,

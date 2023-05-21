@@ -70,10 +70,10 @@ const TeacherAnnounce = () => {
                             <figure>
                                 {!Teacher.profileimg ?
                                 (
-                                    <img className="w-40" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
+                                    <img className="w-40 rounded-xl" src="https://thinksport.com.au/wp-content/uploads/2020/01/avatar-.jpg" alt="Album" />
                                 ) : (
                                     <img
-                                        className="w-40"
+                                        className="w-40 rounded-xl"
                                         src={Teacher.profileimg}
                                         alt="Album"
                                     />
@@ -136,7 +136,7 @@ const TeacherAnnounce = () => {
 
                     <p className="text-2xl font-bold mt-5">Overall Rating: {Teacher.rating} ⭐</p>
 
-                    {is_student && (
+                    {is_student == 1 && (
                     <div className="justify-center mt-5 flex flex-row">
                         <label htmlFor="my-modal" className="btn btn-primary border-green-500  scale-150">Schedule a Class</label>
                     </div>

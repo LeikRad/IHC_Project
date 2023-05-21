@@ -8,7 +8,9 @@ module.exports = {
   },
 
   daisyui: {
-    themes: [{
+    themes: [
+      // "coffee",
+      {
       mytheme: {
 
         "primary": "#c2e074", // pastel green
@@ -43,7 +45,8 @@ module.exports = {
 
         "error-content": "#000000", // black
       },
-    },],
+    },
+  ],
   },
   plugins: [require("daisyui")],
 }

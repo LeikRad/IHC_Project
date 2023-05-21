@@ -70,7 +70,7 @@ function Navbar() {
 
     return (
         <>
-            <div className="navbar bg-base-100 border z-10">
+            <div className="navbar bg-base-200 z-10">
                 <div className="flex-1">
                     <Link
                         to={"/"}
