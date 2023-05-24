@@ -233,7 +233,7 @@ const Announcement = () => {
 
                     <div className="px-3">
                         <Link to="/homepage">
-                            <button onClick={submitAnnouncement} className=" text-white bg-error hover:bg-red-500 hover:scale-105 transition-transform duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
+                            <button onClick={submitAnnouncement} className=" text-white bg-success hover:bg-primary hover:scale-105 transition-full  duration-300 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
                                 Publish
                             </button>
                         </Link>

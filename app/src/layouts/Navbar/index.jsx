@@ -183,19 +183,10 @@ function Navbar() {
                                 >
                                     <li>
                                         <Link
-                                            to={"/profile"}
-                                            className="justify-between"
-                                        >
-                                            Profile
-                                            <span className="badge">New</span>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link
                                             to={"/settings"}
                                             className="justify-between"
                                         >
-                                            <a>Personalize</a>
+                                            <a>Personalize Profile</a>
                                         </Link>
                                     </li>
                                     <li

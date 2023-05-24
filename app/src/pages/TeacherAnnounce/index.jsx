@@ -122,7 +122,7 @@ const TeacherAnnounce = () => {
                             {/* ))} */}
                         </a>
                         Lecture:
-                        <a className="btn btn-primary w-[15%] ml-4 text-2xl">Price: {Teacher.price}$</a>
+                        <a className="px-8 py-3 rounded-xl bg-primary focus:outline-none disabled:opacity-100 disabled:opacity-100 w-[15%] ml-4 text-2xl" disabled>Price: {Teacher.price}$</a>
                     </a>
 
                     <a className="text-2xl font-bold mt-5">Certificates:</a>
