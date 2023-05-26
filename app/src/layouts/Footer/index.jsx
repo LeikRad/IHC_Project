@@ -1,4 +1,5 @@
 import React from "react";
+import { BiHelpCircle } from "react-icons/bi";
 
 const Footer = () => {
 
@@ -36,6 +37,9 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <span className="btn btn-ghost normal-case text-xl">
+                    <BiHelpCircle className="w-10 h-10" /> help
+                </span>
             </footer>
             </div >
     );
